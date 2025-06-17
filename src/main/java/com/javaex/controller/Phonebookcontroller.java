@@ -27,7 +27,6 @@ public class Phonebookcontroller extends HttpServlet {
 		//작동했는지 확인용
 		System.out.println("PhoneBookController"); // 콘솔 출력되는 프린트
 
-		
 		//action 파라미터의 값이 뭔지 알아야됨
 		String action = request.getParameter("action");
 		System.out.println(action);//업무구분
@@ -46,13 +45,12 @@ public class Phonebookcontroller extends HttpServlet {
 			// 1) request객체에 데이터를 넣어준다
 			request.setAttribute("pList",personList);
 			//                     별명  , 0x333  을 넣어준다
-			
-			
-			
+
+			///////////////////////////////////////////////////////////////
 			// 2) list.jsp에 request 객체와 reponse 객체를 보낸다
 			// ** forward 중요한 기술: 전달하는 기술 
-			RequestDispatcher rd = request.getRequestDispatcher("/list.jsp");
-			rd.forward(request, response);
+			//RequestDispatcher rd = request.getRequestDispatcher("/list.jsp");
+			//rd.forward(request, response);
 			
 			// ** forward 중요한 기술: 전달하는 기술 
 			
@@ -78,23 +76,49 @@ public class Phonebookcontroller extends HttpServlet {
 			String hp = request.getParameter("hp") ;
 			String company = request.getParameter("company") ;
 			
-			System.out.println(name);
-			System.out.println(hp);
-			System.out.println(company);
-			
 			//데이터를 묶는다
 			PersonVO personVO = new PersonVO(name,hp,company);
 			System.out.println(personVO);
 			
-			/*
+			
 			//DAO 를 통해서 저장시키기		
 			PhonebookDAO phonebookDAO = new PhonebookDAO();
-			phonebookDAO.personSelect(personVO);
-			*/
+			phonebookDAO.personInsert(personVO);
+					
+			// 리다리엑트  list 요청해주세요Add commentMore actions
+			// http://localhost:8080/phonebook2/pbc?action=list 
+			
+			//리다이렉트
+			response.sendRedirect("http://localhost:8080/phonebook2/pbc?action=list");
 			
 			//응답 (리스트) 하기
+			// -- dao 시켜서 데이터 가져오기
+			List<PersonVO> personList = phonebookDAO.personSelect();
 			
+			//1)request 객체에 데이터를 넣어준다
+			request.setAttribute("pList", personList);
 			
+			//2)list.jsp에 request객체와 response객체를 보낸다 
+			
+			/* 포워드
+			RequestDispatcher rd = request.getRequestDispatcher("/list.jsp");
+			rd.forward(request, response);		
+			*/		
+			
+		}else if("delete".equals(action)) {
+			System.out.println("삭제");
+		
+			//파라미터에서 no 꺼내온다
+			int no = Integer.parseInt(request.getParameter("no"));
+			
+			//dao를 통해서 no를 주고 삭제
+			PhonebookDAO phonebookDAO = new PhonebookDAO();
+			phonebookDAO.personDelete(no);
+			
+			/*
+			//리다이렉트 action=list
+			response.sendRedirect("http://localhost:8080/phonebook2/pbc?action=list");
+			*/
 		}
 		
 	}

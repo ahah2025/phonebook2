@@ -24,7 +24,7 @@
 		<h1>주소록</h1>
 	
 		<h2>전화번호 리스트</h2>
-		<p>입력한 정보 내역입니다.</p>
+		<p>전화번호 리스트입니다.</p>
 		
 		<%
 			for(int i=0; i<personList.size(); i++){
@@ -45,6 +45,11 @@
                		<td>회사(company)</td>
                		<td><%=personList.get(i).getCompany() %></td>
             	<tr>      
+            	<tr>
+               		<td>[수정폼으로 이동]</td>
+        			<td><a href="http://localhost:8080/phonebook2/pbc?action=delete&no=3">[삭제]</a></td>   <!-- 원래 버튼으로 해야된다 js필요 안배워서 a태그로 구현 -->
+            	<tr>    
+
 			</tbody>
 		</table>
 		
@@ -53,10 +58,12 @@
 		}	
 		%>
 		
-		[주소록 작성폼 이동]:주소창에 aaa.html 입력하시고 엔터입력
-		<br>
+		[주소록 작성폼 이동] : 주소창에 <br>Add commentMore actions
+		http://localhost:8080/phonebook2/pbc?action=wformAdd commentMore actions
 		
-		<a href="/aaa.html">주소록 작성폼 이동</a>
+		<br>입력하시고 엔터입력
+		
+		<a href="http://localhost:8080/phonebook2/pbc?action=wform">주소록 작성폼 이동</a>
 	
 	</body>
 </html>

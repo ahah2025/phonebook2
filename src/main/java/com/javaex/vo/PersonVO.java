@@ -17,8 +17,6 @@ public class PersonVO {
 		this.company = company;
 	}
 
-
-
 	public PersonVO(int personId, String name, String hp, String company) {
 		super();
 		this.personId = personId;
