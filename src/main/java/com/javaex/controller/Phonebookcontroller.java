@@ -72,6 +72,10 @@ public class Phonebookcontroller extends HttpServlet {
 		}else if("write".equals(action)) { //등록업무        equals 중요!!!!
 			System.out.println("등록");
 			
+			
+			
+			
+			
 		}
 		
 	}
