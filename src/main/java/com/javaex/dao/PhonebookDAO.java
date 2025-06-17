@@ -169,7 +169,6 @@ public class PhonebookDAO {
 			pstmt = conn.prepareStatement(query);
 			pstmt.setInt(1, no);
 			
-			
 			//실행
 			count = pstmt.executeUpdate();
 						
