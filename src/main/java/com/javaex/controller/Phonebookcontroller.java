@@ -2,6 +2,7 @@ package com.javaex.controller;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.jar.Attributes.Name;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -72,8 +73,26 @@ public class Phonebookcontroller extends HttpServlet {
 		}else if("write".equals(action)) { //등록업무        equals 중요!!!!
 			System.out.println("등록");
 			
+			//파라미터 3개 꺼내기
+			String name = request.getParameter("name");
+			String hp = request.getParameter("hp") ;
+			String company = request.getParameter("company") ;
 			
+			System.out.println(name);
+			System.out.println(hp);
+			System.out.println(company);
 			
+			//데이터를 묶는다
+			PersonVO personVO = new PersonVO(name,hp,company);
+			System.out.println(personVO);
+			
+			/*
+			//DAO 를 통해서 저장시키기		
+			PhonebookDAO phonebookDAO = new PhonebookDAO();
+			phonebookDAO.personSelect(personVO);
+			*/
+			
+			//응답 (리스트) 하기
 			
 			
 		}
