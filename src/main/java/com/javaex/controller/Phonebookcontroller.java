@@ -23,7 +23,7 @@ public class Phonebookcontroller extends HttpServlet {
 	public Phonebookcontroller() {	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+											throws ServletException, IOException {
 		//작동했는지 확인용
 		System.out.println("PhoneBookController"); // 콘솔 출력되는 프린트
 
