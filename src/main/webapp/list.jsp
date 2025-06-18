@@ -3,7 +3,9 @@
 <%@ page import="java.util.List"    %>    
 <%@ page import="com.javaex.vo.PersonVO"  %>
 
-<% //자바문법
+<%
+
+ //자바문법
 	List<PersonVO> personList = (List<PersonVO>)request.getAttribute("pList");
 	//                          형변환 해줘야 함
 	//parameter영역에 임의로 데이터를 추가하여 사용할 수 없다.(요청시 parameter값은 결정됨)

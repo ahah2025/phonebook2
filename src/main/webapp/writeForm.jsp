@@ -22,11 +22,11 @@
 			<br>
 	
 			<label>회사(company)</label>
-			<input type="text" name="company" value="">Add commentMore actions
+			<input type="text" name="company" value="">
 			<br>
 			
 			<label>액션</label>
-			<input type="hidden" name="action" value="write">Add commentMore actions
+			<input type="hidden" name="action" value="write">
 			<br>
 			
 			<button>등록</button>

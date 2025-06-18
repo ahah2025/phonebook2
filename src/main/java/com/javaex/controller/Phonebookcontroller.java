@@ -85,7 +85,7 @@ public class Phonebookcontroller extends HttpServlet {
 			PhonebookDAO phonebookDAO = new PhonebookDAO();
 			phonebookDAO.personInsert(personVO);
 					
-			// 리다리엑트  list 요청해주세요Add commentMore actions
+			// 리다리엑트  list 요청해주세요
 			// http://localhost:8080/phonebook2/pbc?action=list 
 			
 			//리다이렉트
