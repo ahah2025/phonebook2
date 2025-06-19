@@ -31,7 +31,7 @@
 			<input type="text" name="company" value="<%=personVO.getCompany()%>">
 			<br>
 			
-			<label>액션</label>Add commentMore actions
+			<label>액션</label>
 			<input type="text" name="no" value="<%=personVO.getPersonId()%>">
 			<input type="text" name="action" value="modify">
 			<br>
