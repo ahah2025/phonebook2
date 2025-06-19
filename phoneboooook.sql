@@ -21,15 +21,20 @@ create table person(
 );
 
 -- 테이블조회
-select * from person;
-
 select  person_id,
         name,
         hp,
-        com
-        pany
+        company
 from person
 order by person_id desc
+;
+
+select 	person_id,
+		name,
+        hp,
+        company
+from person
+where person_id = 1
 ;
 
 -- 등록
@@ -50,7 +55,7 @@ update person
 set name = '서장훈' , 
      hp = '010-3333-4444',
      company = '02-2222-3333' 
-where person_id = 3 
+where person_id = 1 
 ;
 
 -- 삭제

@@ -9,8 +9,8 @@
 	<body>
 		<h1>주소록</h1>
 	
-		<h2>전화번호 등록폼</h2>
-		<p>전화번호를 등록하는 폼 입니다.</p>
+		<h2>전화번호 수정폼</h2>
+		<p>전화번호를 수정하는 폼 입니다.</p>
 	
 		<form action="http://localhost:8080/phonebook2/pbc"  method="get">
 			<label>이름(name)</label>
